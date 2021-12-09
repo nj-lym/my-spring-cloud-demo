@@ -8,17 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.lym</groupId>
-    <artifactId>consumer-ribbon-service</artifactId>
+    <artifactId>consumer-ribbon-hystrix-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consumer-ribbon-service</name>
+    <name>consumer-ribbon-hystrix-service</name>
     <description>Demo project for Spring Boot</description>
-
-
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
 
     <dependencies>
         <!--api-commons-->
@@ -27,20 +20,39 @@
             <artifactId>api-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--Feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--断路器 hystrix-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <!--eureka client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--监控 actuator-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--eureka client-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
-    <!-- 添加spring-boot的maven插件 -->
     <build>
         <plugins>
             <plugin>

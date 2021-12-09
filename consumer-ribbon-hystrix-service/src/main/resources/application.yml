@@ -2,7 +2,7 @@ server:
   port: 10005
 spring:
   application:
-    name: consumer-hystrix-service #消费端 断路器
+    name: consumer-ribbon-hystrix-service #消费端 断路器
 #eureka配置
 eureka:
   client:

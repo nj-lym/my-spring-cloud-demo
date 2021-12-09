@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("consumer")
-public class ConsumerHystrixController {
+public class ConsumerHystrixFallbackStreamController {
 
     @Autowired
     private FeignClientHystrixFallBack feignClientHystrixFallBack;
@@ -24,7 +24,7 @@ public class ConsumerHystrixController {
      * feign使用hystrix 的回掉逻辑
      */
         @GetMapping("hystrix/payment/all")
-        public CommonResult queryAll() {
+        public CommonResult findAll() {
             return feignClientHystrixFallBack.findAll();
         }
 

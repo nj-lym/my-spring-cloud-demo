@@ -16,7 +16,7 @@ eureka:
   client:
 #    fetch-registry: true
 #    register-with-eureka: true
-    service-url:..
+    service-url:
       #  lym1001@eureka.com
       #  lym1002@eureka.com
       defaultZone:  http://localhost:10001/eureka/

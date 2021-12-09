@@ -1,14 +1,11 @@
 package com.lym;
 
-import com.config.RibbonConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableEurekaClient
-//@RibbonClient(name = "PROVIDED-SERVICE", configuration = RibbonConfig.class)
+@EnableDiscoveryClient
 public class ConsumerRibbonApplication {
 
     public static void main(String[] args) {

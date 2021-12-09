@@ -1,9 +1,9 @@
 # 应用名称
 server:
-  port: 10006
+  port: 10015
 spring:
   application:
-    name: consumer-ribbon-service
+    name: consumer-ribbon-customizing-service
 #eureka配置
 eureka:
   client:
@@ -14,7 +14,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-# Ribbon 负载均衡规则配置
+# Ribbon 通过配置文件 指定某个服务的负载均衡规则 和 创建配置类指定规则的方式 二选一即可
 #PROVIDED-SERVICE:
 #  ribbon:
-#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #设置负载均衡的规则为随机
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

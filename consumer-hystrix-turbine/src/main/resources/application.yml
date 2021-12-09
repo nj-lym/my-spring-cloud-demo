@@ -1,0 +1,18 @@
+server:
+  port: 10014
+spring:
+  application:
+    name: consumer-hystrix-turbine #消费端 断路器回调
+#eureka配置
+eureka:
+  client:
+#    fetch-registry: true
+#    register-with-eureka: false
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+#  Turbine会在eureka中,找到配置的微服务,并聚合所配置的服务的监控数据
+  app-config: consumer-ribbon-hystrix-service,consumer-feign-hystrix-fallback-stream,consumer-ribbon-customizing-service
+  cluster-name-expression: "'default'"

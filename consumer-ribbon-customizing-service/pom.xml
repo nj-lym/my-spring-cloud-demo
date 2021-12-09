@@ -8,9 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.lym</groupId>
-    <artifactId>consumer-ribbon-service</artifactId>
+    <artifactId>consumer-ribbon-customizing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>consumer-ribbon-service</name>
+    <name>consumer-ribbon-customizing-service</name>
     <description>Demo project for Spring Boot</description>
 
 

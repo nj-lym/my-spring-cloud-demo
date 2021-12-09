@@ -1,5 +1,5 @@
 server:
-  port: 10011
+  port: 10013
 spring:
   application:
     name: consumer-feign-hystrix-fallback-stream #消费端 断路器回调

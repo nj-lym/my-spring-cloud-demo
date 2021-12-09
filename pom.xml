@@ -13,13 +13,15 @@
         <module>provided-service</module>
         <module>consumer-resttemplate-service</module>
         <module>consumer-feign-service</module>
-        <module>consumer-hystrix-service</module>
+        <module>consumer-ribbon-hystrix-service</module>
         <module>consumer-ribbon-service</module>
+        <module>consumer-ribbon-customizing-service</module>
         <module>consumer-hystrix-dashboard</module>
         <module>consumer-feign-customizing</module>
         <module>provider-service-with-auth</module>
         <module>consumer-hystrix-fallback</module>
         <module>consumer-feign-hystrix-fallback-stream</module>
+        <module>consumer-hystrix-turbine</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
