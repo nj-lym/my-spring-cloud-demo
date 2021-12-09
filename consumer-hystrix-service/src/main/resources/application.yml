@@ -1,0 +1,34 @@
+server:
+  port: 10005
+spring:
+  application:
+    name: consumer-hystrix-service #消费端 断路器
+#eureka配置
+eureka:
+  client:
+#    fetch-registry: true
+#    register-with-eureka: false
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+#关闭敏感信息校验
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 设置hystrix 出发打开断路器的次数 在配置时间窗口内达到此数量的失败后，进行短路。默认20个
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 5
+#开启feign支持 hystrix 和 @EnableHystrix (二选一)
+#feign:
+#  hystrix:
+#    enabled: true

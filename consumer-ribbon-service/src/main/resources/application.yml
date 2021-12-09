@@ -1,0 +1,20 @@
+# 应用名称
+server:
+  port: 10006
+spring:
+  application:
+    name: consumer-ribbon-service
+#eureka配置
+eureka:
+  client:
+    #    fetch-registry: true
+    #    register-with-eureka: false
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+
+# Ribbon 负载均衡规则配置
+PROVIDED-SERVICE:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

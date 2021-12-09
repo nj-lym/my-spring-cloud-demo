@@ -1,0 +1,37 @@
+server:
+  port: 10012
+spring:
+  application:
+    name: consumer-hystrix-fallback-factory #消费端 断路器回调
+#eureka配置
+eureka:
+  client:
+#    fetch-registry: true
+#    register-with-eureka: false
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+#关闭敏感信息校验
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 设置hystrix 出发打开断路器的次数 在配置时间窗口内达到此数量的失败后，进行短路。默认20个
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 5
+#开启feign支持 hystrix
+# 说明：请务必注意，从Spring Cloud Dalston开始，Feign默认是不开启Hystrix的。
+# 因此，如使用Dalston请务必额外设置属性：feign.hystrix.enabled=true，否则断路器不会生效。
+# 而，Spring Cloud Angel/Brixton/Camden中，Feign默认都是开启Hystrix的。无需设置该属性。
+feign:
+  hystrix:
+    enabled: true

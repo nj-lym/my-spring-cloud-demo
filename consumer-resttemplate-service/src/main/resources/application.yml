@@ -1,0 +1,14 @@
+server:
+  port: 10003
+spring:
+  application:
+    name: consumer-resttemplate-service #消费端 restTemplate方式
+#eureka配置
+eureka:
+  client:
+    #    fetch-registry: true
+    #    register-with-eureka: true
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true

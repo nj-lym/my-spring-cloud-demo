@@ -1,0 +1,15 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: eureka-service
+eureka:
+  client:
+    fetch-registry: false  #false表示自己就是注册中心,维护服务实例
+    register-with-eureka: false  #不想注册中心注册自己
+    #设置与eureka  server交互的地址和注册服务都需要依赖这个地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: localhost #

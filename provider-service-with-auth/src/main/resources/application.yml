@@ -1,0 +1,28 @@
+server:
+  port: 10009
+spring:
+  application:
+#    name: provider-service-with-auth # 服务名
+    name: provided-service # 为了便于测试 这里名字还是使用原来的 (Eureka里注册的服务名)
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myspringcloud?autoReconnect=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+logging:
+  level:
+    root: info
+#eureka配置
+eureka:
+  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+    service-url:
+      #  lym1001@eureka.com
+      #  lym1002@eureka.com
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true

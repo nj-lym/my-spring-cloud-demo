@@ -1,0 +1,18 @@
+server:
+  port: 10004
+spring:
+  application:
+    name: consumer-service-service #消费端 service 方式调用
+#eureka配置
+eureka:
+  client:
+#    fetch-registry: true
+#    register-with-eureka: false
+    service-url:
+      defaultZone:  http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+# 指定 Feign 接口的日志级别为 DEBUG  配合FeignConfig自定义Feign的日志级别使用
+logging:
+  level:
+   com.lym.config.FeignConfig: debug
