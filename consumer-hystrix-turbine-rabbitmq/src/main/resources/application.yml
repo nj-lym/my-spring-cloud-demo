@@ -1,0 +1,20 @@
+server:
+  port: 10017
+spring:
+  application:
+    name: consumer-hystrix-turbine-rabbitmq #消费端 断路器回调
+  # RabbitMQ 配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#eureka配置
+eureka:
+  client:
+    #    fetch-registry: true
+    #    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
